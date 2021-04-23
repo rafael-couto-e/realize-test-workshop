@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TestWorkshop</string>
+    <string name="public_repos">Repositórios públicos: %1$s</string>
+    <string name="created_at">Conta criada em %1$s</string>
+    <string name="following">Seguindo</string>
+    <string name="followers">Seguidores</string>
+    <string name="error_label">Ocorreu um erro</string>
+    <string name="error_button">Tentar novamente</string>
+</resources>
