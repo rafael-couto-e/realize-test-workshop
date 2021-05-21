@@ -12,12 +12,12 @@ import io.mockk.mockkClass
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
 import org.junit.Test
-import retrofit2.HttpException
 
 class ProfileUseCaseTest {
     private lateinit var sut: ProfileUseCase
     private lateinit var repository: GitHubRepositoryAbs
     private lateinit var mapper: ProfileMapperAbs
+    private val userName = "userName"
 
     @Before
     fun setUp() {
@@ -28,7 +28,6 @@ class ProfileUseCaseTest {
 
     @Test
     fun getProfileSuccessTest() = runBlocking {
-        val userName = "userName"
         val input = Profile().apply {
             name = "Test"
             company = ""
@@ -60,7 +59,6 @@ class ProfileUseCaseTest {
 
     @Test(expected = Exception::class)
     fun getProfileErrorTest() {
-        val userName = "userName"
         coEvery { repository.getProfile(any()) }.throws(Exception())
         runBlocking { sut.getUserProfile(userName) }
     }
