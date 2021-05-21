@@ -62,8 +62,6 @@ class ProfileUseCaseTest {
     fun getProfileErrorTest() {
         val userName = "userName"
         coEvery { repository.getProfile(any()) }.throws(Exception())
-        runBlocking {
-            sut.getUserProfile(userName)
-        }
+        runBlocking { sut.getUserProfile(userName) }
     }
 }
