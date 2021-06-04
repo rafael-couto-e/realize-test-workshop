@@ -10,7 +10,7 @@ class ProfileMapper : ProfileMapperAbs {
 
     override fun map(input: Profile) = ProfileUI(
         input.name,
-        input.company,
+        input.company.orEmpty(),
         input.location,
         input.bio,
         input.publicRepos.toString(),
